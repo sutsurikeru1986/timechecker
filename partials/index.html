@@ -1,0 +1,92 @@
+<div class="row">
+
+    <div class="large-12 columns">
+
+        <p class="time">time<strong>Tracker</strong></p>
+
+        <p class="intro">Enter or modify a starting time</p>
+
+        <div class="row">
+
+            <div class="small-12 large-offset-4 large-3 columns">
+
+                <div class="row">
+
+                    <div class="small-6 large-7 columns">
+                        <select name="mySelect" id="mySelect" ng-options="day.day for day in days track by day.id" ng-model="selectedOption"></select>
+                    </div>
+
+                    <div class="small-6 large-5 columns">
+                        <input ng-model="selectedOption.time" type="time" id="{{ day.day }}Time">
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="small-12 large-5 columns">
+                <a class="buttonTime" href ng-click="updateDay(selectedOption.day)">Update time</a>
+            </div>
+
+        </div>
+
+        <div class="row" ng-hide="hideTimeStamp">
+
+            <div class="large-12 columns">
+
+                <p class="clearTimes">
+                    <a class="buttonClear" href ng-click="clearWeek()">Clear saved times</a>
+                </p>
+
+            </div>
+
+        </div>
+
+        <div class="row" ng-hide="hideTimeStamp">
+
+            <div class="large-12 columns">
+
+                <p>Current clock-ins</p>
+
+                <div class="currnentClockIn" ng-repeat="day in timeStamp | orderDays:'id'">
+
+                    <div class="row">
+
+                        <div class="small-6 large-offset-3 large-1 columns">
+                            <p>{{ day.day }}</p>
+                        </div>
+
+                        <div class="small-6 large-2 columns">
+
+                            <input value="{{day.time | date:'HH:mm' }}" type="datetime" id="{{ day.day }}Time" disabled>
+
+                        </div>
+
+                        <div class="small-6 large-2 columns">
+                            <p>Home time: {{ day.home | date:'HH:mm' }}</p>
+                        </div>
+
+                        <div class="small-6 large-4 columns">
+                            <a class="buttonClear" href ng-click="removeTimeStamp(day.day)">&times;</a>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!----- divider ------>
+
+        <div class="reveal locationReveal" id="noTimeForThat" data-reveal>
+            <p>Please input a start time!</p>
+            <button class="close-button" data-close aria-label="Close modal" type="button">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+
+    </div>
+
+</div>

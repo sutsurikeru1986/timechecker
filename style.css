@@ -1,0 +1,66 @@
+p {
+  text-align: center;
+  font-family: "Open Sans", sans-serif;
+  color: #666; }
+  p.time {
+    margin: 25px 0;
+    text-align: center;
+    font-family: "Roboto", sans-serif;
+    font-size: 32px;
+    color: #0c8a98; }
+    p.time strong {
+      color: #0FACBE; }
+  p.intro {
+    text-align: center;
+    color: #666; }
+  p.clearTimes {
+    text-align: center; }
+
+select,
+input {
+  color: #666 !important; }
+
+.buttonTime {
+  background: #0FACBE;
+  color: #fff;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0 1rem;
+  padding: .85em 1em;
+  -webkit-appearance: none;
+  border: 1px solid transparent;
+  border-radius: 0;
+  -webkit-transition: background-color .25s ease-out,color .25s ease-out;
+  transition: background-color .25s ease-out,color .25s ease-out;
+  font-size: .9rem;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer; }
+  .buttonTime:hover, .buttonTime:active, .buttonTime:focus {
+    color: #fff;
+    background: #0c8a98; }
+
+.buttonClear {
+  background: #0c8a98;
+  color: #fff;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 0 1rem;
+  padding: .85em 1em;
+  -webkit-appearance: none;
+  border: 1px solid transparent;
+  border-radius: 0;
+  -webkit-transition: background-color .25s ease-out,color .25s ease-out;
+  transition: background-color .25s ease-out,color .25s ease-out;
+  font-size: .9rem;
+  line-height: 1;
+  text-align: center;
+  cursor: pointer; }
+  .buttonClear:hover, .buttonClear:active, .buttonClear:focus {
+    color: #fff;
+    background: #096872; }
+
+.currnentClockIn p {
+  margin-top: 5px; }
+
+/*# sourceMappingURL=style.css.map */

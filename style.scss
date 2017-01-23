@@ -1,0 +1,72 @@
+$roboto: 'Roboto', sans-serif;
+$opensans: 'Open Sans', sans-serif;
+$fontcolour: #666;
+$white: #fff;
+$mediumteal: #0FACBE;
+$darkteal: #0c8a98;
+
+@mixin buttons($background, $fontcol, $hoverfont, $hoverbackground) {
+    background: $background;
+    color: $fontcol;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 1rem;
+    padding: .85em 1em;
+    -webkit-appearance: none;
+    border: 1px solid transparent;
+    border-radius: 0;
+    -webkit-transition: background-color .25s ease-out,color .25s ease-out;
+    transition: background-color .25s ease-out,color .25s ease-out;
+    font-size: .9rem;
+    line-height: 1;
+    text-align: center;
+    cursor: pointer;
+    &:hover,
+    &:active,
+    &:focus {
+        color: $hoverfont;
+        background: darken($hoverbackground, 8%);
+    }
+}
+
+p {
+    text-align: center;
+    font-family: $opensans;
+    color: $fontcolour;
+    &.time {
+        margin: 25px 0;
+        text-align: center;
+        font-family: $roboto;
+        font-size: 32px;
+        color: darken($mediumteal, 8%);
+        strong {
+            color: $mediumteal;
+        }
+    }
+    &.intro {
+        text-align: center;
+        color: $fontcolour;
+    }
+    &.clearTimes {
+        text-align: center;
+    }
+}
+
+select,
+input {
+    color: $fontcolour !important;
+}
+
+.buttonTime {
+    @include buttons($mediumteal, $white, $white, $mediumteal);
+}
+
+.buttonClear {
+    @include buttons($darkteal, $white, $white, $darkteal);
+}
+
+.currnentClockIn {
+    p {
+        margin-top: 5px;
+    }
+}
